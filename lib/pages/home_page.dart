@@ -53,9 +53,9 @@ class _HomePageState extends State<HomePage> {
           ),
           // For debugging
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+            padding: Constant.textPadding,
             child: Text(
-              'Popular News',
+              Constant.popularNews,
               style: Theme.of(context).textTheme.headline4,
             ),
           ),

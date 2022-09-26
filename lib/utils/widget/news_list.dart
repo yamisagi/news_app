@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/model/news_model.dart';
+import 'package:news_app/utils/widget/shimmer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NewsList extends StatelessWidget {
@@ -51,9 +52,9 @@ class NewsList extends StatelessWidget {
                                           Center(
                                     child: CircularProgressIndicator(
                                       value: downloadProgress.progress,
-                                      color: Colors.deepOrange.shade700,
+                                      color: Colors.grey.shade300,
                                       strokeWidth: 2,
-                                      backgroundColor: Colors.white,
+                                      backgroundColor: Colors.transparent,
                                     ),
                                   ),
                                   errorWidget: (context, url, error) =>
@@ -64,7 +65,14 @@ class NewsList extends StatelessWidget {
                               )
                             : const CircularProgressIndicator(),
                         title: Text(article.title!),
-                        subtitle: Text(article.description!),
+                        subtitle: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: Text(
+                            article.description!,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
                       ),
                     );
                   },
@@ -72,9 +80,7 @@ class NewsList extends StatelessWidget {
               } else if (snapshot.hasError) {
                 return const Text('Error');
               } else {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
+                return const Shimmer();
               }
             },
           ),

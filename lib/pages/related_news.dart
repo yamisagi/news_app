@@ -25,7 +25,7 @@ class RelatedNews extends StatelessWidget {
         body: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
+              padding: Constant.textPadding,
               child: Text(
                 query.isEmpty ? '' : 'Top News About : $query',
                 style: Theme.of(context).textTheme.headline4,

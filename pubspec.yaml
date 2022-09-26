@@ -18,6 +18,7 @@ dependencies:
   http: ^0.13.5
   cached_network_image: ^3.2.2
   url_launcher: ^6.1.5
+  loader_skeleton: ^0.0.4
 
 dev_dependencies:
   flutter_test:
