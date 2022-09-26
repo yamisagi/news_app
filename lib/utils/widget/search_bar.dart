@@ -19,6 +19,7 @@ class SearchBar extends StatelessWidget {
         autocorrect: true,
         onEditingComplete: onEditingComplete,
         controller: controller,
+        style: const TextStyle(color: Colors.black),
         decoration: const InputDecoration(
           fillColor: Colors.white,
           filled: true,

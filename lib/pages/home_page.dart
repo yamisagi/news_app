@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/pages/related_news.dart';
+import 'package:news_app/service/service.dart';
+import 'package:news_app/service/service_helper.dart';
 import 'package:news_app/utils/constants.dart';
+import 'package:news_app/utils/widget/news_list.dart';
 import 'package:news_app/utils/widget/search_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,27 +16,55 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final TextEditingController controller = TextEditingController();
   String query = '';
-  void onEditingComplete(BuildContext context) {
+  void onEditingComplete(
+    BuildContext context,
+  ) {
     setState(() => query = controller.text);
     // Dissmiss keyboard
     FocusScope.of(context).unfocus();
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) {
+          return RelatedNews(query: query);
+        },
+      ),
+    );
+  }
+
+  Future<String> getNews() async {
+    final Service service = Service(countryName: 'us');
+    final String url = service.url;
+    final String response = await ServiceHelper.get(url);
+    return response;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(Constant.appBarText),
-        ),
-        body: Column(
-          children: [
-            SearchBar(
-              onEditingComplete: (() => onEditingComplete(context)),
-              controller: controller,
+      appBar: AppBar(
+        title: const Text(Constant.appBarText),
+      ),
+      body: Column(
+        children: [
+          SearchBar(
+            onEditingComplete: (() => onEditingComplete(context)),
+            controller: controller,
+          ),
+          // For debugging
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+            child: Text(
+              'Popular News',
+              style: Theme.of(context).textTheme.headline4,
             ),
-            // For debugging
-            Text('Search: $query'),
-          ],
-        ));
+          ),
+          NewsList(
+            query: query,
+            future: getNews(),
+          ),
+        ],
+      ),
+    );
   }
 }
