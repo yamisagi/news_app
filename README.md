@@ -52,7 +52,6 @@
 ## About The Project
 
 
-
 <!-- <img src="https://github.com/yamisagi/flutterdevcamp_travel_ui/blob/main/assets/ss.gif" width="350" height="650"> -->
 
 
