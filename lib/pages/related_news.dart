@@ -29,6 +29,7 @@ class RelatedNews extends StatelessWidget {
               child: Text(
                 query.isEmpty ? '' : 'Top News About : $query',
                 style: Theme.of(context).textTheme.headline4,
+                textAlign: TextAlign.center,
               ),
             ),
             NewsList(

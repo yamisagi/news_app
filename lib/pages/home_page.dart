@@ -1,8 +1,10 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/pages/related_news.dart';
 import 'package:news_app/service/service.dart';
 import 'package:news_app/service/service_helper.dart';
 import 'package:news_app/utils/constants.dart';
+import 'package:news_app/utils/widget/category_news.dart';
 import 'package:news_app/utils/widget/news_list.dart';
 import 'package:news_app/utils/widget/search_bar.dart';
 
@@ -51,12 +53,12 @@ class _HomePageState extends State<HomePage> {
             onEditingComplete: (() => onEditingComplete(context)),
             controller: controller,
           ),
-          // For debugging
+          const CategoryNews(),
           Padding(
             padding: Constant.textPadding,
             child: Text(
               Constant.popularNews,
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headline3,
             ),
           ),
           NewsList(

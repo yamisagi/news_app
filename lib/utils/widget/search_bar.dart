@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/utils/color_const.dart';
 import 'package:news_app/utils/constants.dart';
 
 class SearchBar extends StatelessWidget {
@@ -13,33 +14,23 @@ class SearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
+      padding: Constant.searchBarPadding,
       child: TextFormField(
         enableSuggestions: true,
         autocorrect: true,
         onEditingComplete: onEditingComplete,
         controller: controller,
-        style: const TextStyle(color: Colors.black),
+        style: const TextStyle(color: ProductColor.searchBarTextColor),
         decoration: const InputDecoration(
-          fillColor: Colors.white,
+          fillColor: ProductColor.searchBarFillColor,
           filled: true,
           hintText: Constant.hintText,
-          hintStyle: TextStyle(color: Colors.grey),
-          prefixIcon: Icon(Icons.search, color: Colors.black),
+          hintStyle: TextStyle(color: ProductColor.searchBarHintColor),
+          prefixIcon:
+              Icon(Icons.search, color: ProductColor.searchBarTextColor),
           alignLabelWithHint: true,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(30),
-            ),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(30),
-            ),
-            borderSide: BorderSide(
-              color: Colors.black,
-            ),
-          ),
+          border: Constant.searchBarBorder,
+          focusedBorder: Constant.searchBarBorder,
         ),
       ),
     );
