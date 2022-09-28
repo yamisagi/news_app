@@ -56,10 +56,9 @@
 https://user-images.githubusercontent.com/84624853/192706026-57a94dcb-44b1-42aa-a272-2e1648cddb69.mp4
 
 
-<!-- <img src="https://github.com/yamisagi/flutterdevcamp_travel_ui/blob/main/assets/ss.gif" width="350" height="650"> -->
 
 
-In this project, I am trying to clone News App [#FlutterDevCamp from GDG London](https://twitter.com/gdglondon?s=20&t=Kruc-nFOBBGi48Lzdvx1xg) .
+In this project, I am trying to create News App [#FlutterDevCamp from GDG London](https://twitter.com/gdglondon?s=20&t=Kruc-nFOBBGi48Lzdvx1xg) .
 
 <!-- ROADMAP -->
 <!-- ## Roadmap
