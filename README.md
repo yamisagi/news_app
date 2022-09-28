@@ -52,6 +52,10 @@
 ## About The Project
 
 
+
+https://user-images.githubusercontent.com/84624853/192706026-57a94dcb-44b1-42aa-a272-2e1648cddb69.mp4
+
+
 <!-- <img src="https://github.com/yamisagi/flutterdevcamp_travel_ui/blob/main/assets/ss.gif" width="350" height="650"> -->
 
 
